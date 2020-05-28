@@ -9,6 +9,7 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <cdk.version>1.35.0</cdk.version>
     </properties>
 
     <build>
@@ -39,7 +40,12 @@
         <dependency>
             <groupId>software.amazon.awscdk</groupId>
             <artifactId>core</artifactId>
-            <version>1.35.0</version>
+            <version>${cdk.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>software.amazon.awscdk</groupId>
+            <artifactId>ecr-assets</artifactId>
+            <version>${cdk.version}</version>
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/junit/junit -->
