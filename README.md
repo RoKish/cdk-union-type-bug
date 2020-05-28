@@ -1,18 +1,13 @@
-# Welcome to your CDK Java project!
+# Reproducing the issue
 
-This is a blank project for Java development with CDK.
+```
+mvn compile
+cdk synth
+```
 
-The `cdk.json` file tells the CDK Toolkit how to execute your app.
-
-It is a [Maven](https://maven.apache.org/) based project, so you can open this project with any Maven compatible Java IDE to build and run tests.
-
-## Useful commands
-
- * `mvn package`     compile and run tests
- * `cdk ls`          list all stacks in the app
- * `cdk synth`       emits the synthesized CloudFormation template
- * `cdk deploy`      deploy this stack to your default AWS account/region
- * `cdk diff`        compare deployed stack with current state
- * `cdk docs`        open CDK documentation
-
-Enjoy!
+In the output you should be able to see the following:
+```
+Asset packaging: container-image
+Asset interfaces: [@aws-cdk/cloud-assembly-schema.FileAssetMetadataEntry]
+```
+The interface is `FileAssetMetadataEntry`, while it is supposed to be `ContainerImageAssetMetadataEntry`
